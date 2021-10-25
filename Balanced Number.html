@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		function balancedNum(number) {
+			let numStr = number.toString()
+			if (numStr.length == 1 || numStr.length == 2) return 'Balanced'
+
+			let num1 = numStr.slice(0, Math.floor(numStr.length / 2 - 0.5)).split('').reduce((a, b) => a + +b, 0)
+			let num2 = numStr.slice(-Math.floor(numStr.length / 2 - 0.5)).split('').reduce((a, b) => a + +b, 0)
+
+			return num1 == num2 ? 'Balanced' : 'Not Balanced'
+
+		}
+
+		console.log(balancedNum(12))
+	</script>
+</body>
+
+</html>
