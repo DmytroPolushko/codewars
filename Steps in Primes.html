@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Steps in Primes</title>
+</head>
+
+<body>
+	<script>
+		'use strict'
+		// my practices
+
+		function step(g, m, n) {
+			let arr = [];
+			nextPrime:
+			for (let i = m; i <= n; i++) {
+				for (let j = 2; j * j <= i; j++) {
+					if (i % j == 0) continue nextPrime
+				}
+				arr.push(i)
+				if (arr.includes(i - g)) return [i - g, i]
+			}
+			return null
+		}
+
+
+		// better practices
+
+		// function isPrime(n) {
+		// 	var r = Math.sqrt(n) | 0;
+		// 	for (var i = 2; i <= r && n % i; i++);
+		// 	return i > r;
+		// }
+
+		// function step(g, m, n) {
+		// 	for (var i = m; i <= n - g; i++) {
+		// 		if (isPrime(i) && isPrime(i + g)) {
+		// 			return [i, i + g];
+		// 		};
+		// 	}
+
+		// 	return null;
+		// }
+
+	</script>
+</body>
+
+</html>
