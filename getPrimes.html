@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>getPrimes</title>
+</head>
+
+<body>
+	<script>
+		'use strict'
+		function getPrime(a) {
+
+			let sqrt = Math.sqrt(a);
+			for (var i = 2; i <= sqrt && a % i; i++);
+
+			if (i > sqrt) return 'prime number';
+
+			return 'not prime number'
+		}
+
+		console.log(getPrime(4))
+	</script>
+</body>
+
+</html>
