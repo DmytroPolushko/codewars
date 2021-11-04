@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Josephus Permutation</title>
+</head>
+
+<body>
+
+	<script>
+		// algorithm :
+		// (i + k — 1) % M
+
+		// where:
+		// M = length
+		// k = k :)
+		// i = i-th soldier
+
+
+		function josephus(items, k) {
+
+			let resultArr = [];
+			let i = 0;
+
+			while (items.length) {
+				i = (i + k - 1) % items.length;
+
+				resultArr.push(...items.splice(i, 1))
+			}
+
+			return resultArr
+
+		}
+	</script>
+</body>
+
+</html>
