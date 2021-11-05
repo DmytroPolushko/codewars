@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dominant primes</title>
+</head>
+
+<body>
+	<script>
+		'use strict'
+
+		function solve(a, b) {
+
+			let result = 0;
+			let count = 1;
+
+			for (let i = 3; i <= b; i++) {
+
+				let primeEl = getPrimeNum(i);
+
+				if (primeEl && getPrimeNum(++count)) {
+					primeEl >= a && primeEl <= b ? result += primeEl : null;
+				}
+			}
+
+			return result;
+		}
+
+
+		function getPrimeNum(a) {
+			let sqrt = Math.sqrt(a);
+			for (var j = 2; j <= sqrt && a % j; j++);
+			if (j > sqrt) return a;
+		}
+	</script>
+</body>
+
+</html>
