@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bit Counting</title>
+</head>
+
+<body>
+
+	<script>
+		'use strict'
+		var countBits = function (n) {
+			return [...n.toString(2)].reduce((e1, e2) => e2 == 0 ? e1 : e1 += +e2, 0)
+		};
+
+		console.log(countBits(9));
+
+	</script>
+</body>
+
+</html>
