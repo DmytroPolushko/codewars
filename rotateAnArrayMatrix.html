@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		'use strict'
+
+		function rotate(matrix, direction) {
+			let table = [];
+
+			for (let i = 0; i < matrix[0].length; i++) {
+				let rows = [];
+
+				if (direction == 'clockwise') {
+					for (let j = matrix.length - 1; j >= 0; j--) rows.push(matrix[j][i]);
+					table.push(rows);
+				}
+
+				if (direction == 'counter-clockwise') {
+					for (let j = 0; j < matrix.length; j++) rows.push(matrix[j][matrix[0].length - 1 - i]);
+					table.push(rows);
+				}
+			}
+
+			return table
+		}
+
+
+		// best practices
+		// function rotate(matrix, direction) {
+		// 	return direction == 'clockwise' ?
+		// 		matrix[0].map((_, k) => matrix.map(a => a[k]).reverse()) :
+		// 		matrix[0].map((_, k) => matrix.map(a => a[k])).reverse()
+		// }
+	</script>
+</body>
+
+</html>
